@@ -1,0 +1,38 @@
+{
+  "about": {
+    "title": "Sobre",
+    "credit": "Agradecimentos:",
+    "dict": "The words and meaning come from the Free Dictionary API, you can check them at ",
+    "font": "The font used is the IA Writer Duo and IA Writer Quattro from "
+  },
+  "languages": {
+    "title": "Baixar Dicionários",
+    "en": "Inglês",
+    "fr": "Francês",
+    "es": "Espanhol"
+  },
+  "settings": {
+    "title": "Configurações",
+    "mode": "Dark Mode",
+    "dict": "Dicionários",
+    "about": "Sobre"
+  },
+  "editor": {
+    "defaultTitle": "Sem Título"
+  },
+  "notes": {
+    "title": "Notebooks",
+    "words": "palavras",
+    "word": "palavra",
+    "empty": "Vazio",
+    "welcome": "Bem-vindo",
+    "description": "Adicione uma nova nota para começar sua lista e a pesquisar no dicionário"
+  },
+  "priceModal": {
+    "defaultTitle": "Apoie o app e acesse todas as funcionalidades:",
+    "time": "mês",
+    "cta": "Experimente %{days} dias grátis",
+    "disclaimer": "Cancelamento quando quiser",
+    "features": "- Notas ilimitadas\n- Multi-línguas\n- Sem propaganda\n- Flashcards (em breve)\n- Não perder suas palavra"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "about": {
+    "title": "About",
+    "credit": "Thanks to",
+    "dict": "The words and meaning come from the Free Dictionary API, you can check them at ",
+    "font": "The font used is the IA Writer Duo and IA Writer Quattro from "
+  },
+  "languages": {
+    "title": "Download Dictionaries",
+    "en": "English",
+    "fr": "French",
+    "es": "Spanish"
+  },
+  "settings": {
+    "title": "Settings",
+    "mode": "Dark Mode",
+    "dict": "Dictionaries",
+    "about": "About"
+  },
+  "editor": {
+    "defaultTitle": "Untitled"
+  },
+  "notes": {
+    "title": "Notebooks",
+    "words": "words",
+    "word": "word",
+    "empty": "Empty",
+    "welcome": "Welcome",
+    "description": "Add a new note to start collect words and search on dictionary"
+  },
+  "priceModal": {
+    "defaultTitle": "Support the app and unlock all features:",
+    "time": "month",
+    "cta": "Try %{days} days free",
+    "disclaimer": "Cancel anytime",
+    "features": "- Unlmited notes\n- Multi-language\n- No ads\n- Flashcards (soon)\n- Don't lost your words"
+  }
+}

@@ -1,11 +1,12 @@
 {
   "expo": {
-    "name": "wordnote-app-expo",
-    "slug": "wordnote-app-expo",
+    "name": "Wordnote Dictionary",
+    "slug": "dictionote",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "privacy": "unlisted",
+    "owner": "zehfernandes",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -14,17 +15,24 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*", "assets/**"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "infoPlist": {
+        "CFBundleAllowMixedLocalizations": true
+      },
+      "bundleIdentifier": "com.zehfernandes.dictionote"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "allowBackup": true,
+      "package": "com.zehfernandes.dictionote"
+    },
+    "locales": {
+      "pt": "./storelocales/pt.json"
     },
     "web": {
       "favicon": "./assets/favicon.png"

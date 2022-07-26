@@ -21,9 +21,9 @@ Easy to load, the dictionaries are locally stored in your phone for a quick data
 
 ## Download
 
-[![](https://tools.applemediaservices.com/api/badges/download-on-the-mac-app-store/black/en-us?size=250x83&releaseDate=1615852800)](https://apps.apple.com/app/wordnote-dictionary/id1596537633)
+<a href="https://apps.apple.com/app/wordnote-dictionary/id1596537633" rel="nofollow"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-mac-app-store/black/en-us?size=250x83&releaseDate=1615852800" alt="" width="160"></a>
 
-[![](https://raw.githubusercontent.com/steverichey/google-play-badge-svg/master/img/en_get.svg)](https://play.google.com/store/apps/details?id=com.zehfernandes.dictionote)
+<a href="https://play.google.com/store/apps/details?id=com.zehfernandes.dictionote" rel="nofollow"><img src="https://www.wordnote.app/assets/google-play-badge.png" alt="" width="160"></a>
 
 ## Feedback 
 

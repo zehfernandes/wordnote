@@ -23,6 +23,8 @@ Easy to load, the dictionaries are locally stored in your phone for a quick data
 
 [![](https://tools.applemediaservices.com/api/badges/download-on-the-mac-app-store/black/en-us?size=250x83&releaseDate=1615852800)](https://apps.apple.com/app/wordnote-dictionary/id1596537633)
 
+[![](https://raw.githubusercontent.com/steverichey/google-play-badge-svg/master/img/en_get.svg)](https://play.google.com/store/apps/details?id=com.zehfernandes.dictionote)
+
 ## Feedback 
 
 Please open a new [issue](https://github.com/zehfernandes/wordnote/issues) for any feedback you want to give

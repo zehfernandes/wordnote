@@ -2,7 +2,7 @@
   "expo": {
     "name": "Wordnote Dictionary",
     "slug": "dictionote",
-    "version": "1.0.0",
+    "version": "1.2.5",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "privacy": "unlisted",
@@ -15,8 +15,12 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*", "assets/**"],
+    "assetBundlePatterns": [
+      "**/*",
+      "assets/**"
+    ],
     "ios": {
+      "buildNumber": "6.0.3",
       "supportsTablet": false,
       "infoPlist": {
         "CFBundleAllowMixedLocalizations": true

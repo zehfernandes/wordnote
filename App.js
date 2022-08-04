@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef } from "react";
-import { UIManager, Platform, SplashScreen } from "react-native";
+import React, { useEffect, useState, useRef, useCallback } from "react";
+import { UIManager, Platform, View, Text } from "react-native";
 import { useFonts } from "expo-font";
-import AppLoading from "expo-app-loading";
+import * as SplashScreen from "expo-splash-screen";
 import i18n from "./lib/i18n";
 
 import {
@@ -38,6 +38,9 @@ if (Platform.OS === "android") {
 //TODO: Move Appereance to AppDB
 let MyTheme = generateTheme(false);
 
+// Keep the splash screen visible while we fetch resources
+SplashScreen.preventAutoHideAsync();
+
 export default function App() {
   const db = useRef(null);
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -53,11 +56,18 @@ export default function App() {
   useEffect(() => {
     const fetchData = async () => {
       console.log("FETCH");
-      const settings = await getSettings();
-      const data = await getAllData();
-      db.current = await new DatabaseInit();
 
-      await firstLaunch();
+      const v = await Promise.all([
+        getAllData(),
+        getSettings(),
+        new DatabaseInit(),
+        firstLaunch(),
+      ]);
+
+      const data = v[0];
+      const settings = v[1];
+
+      db.current = v[2];
 
       setGlobalData(data);
       setLoadedDatabase(true);
@@ -66,7 +76,7 @@ export default function App() {
 
       updateTheme(settings.darkMode);
 
-      //SplashScreen.hide();
+      await SplashScreen.hideAsync();
     };
 
     fetchData();
@@ -86,10 +96,8 @@ export default function App() {
     updateSettings(settings);
   };
 
-  //Onboarding?
-  // Load scren
   if (!loaded || !loadedDatabase) {
-    return <AppLoading />;
+    return null;
   }
 
   const commonProps = {

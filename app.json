@@ -20,7 +20,7 @@
       "assets/**"
     ],
     "ios": {
-      "buildNumber": "6.0.3",
+      "buildNumber": "6.0.5",
       "supportsTablet": false,
       "infoPlist": {
         "CFBundleAllowMixedLocalizations": true

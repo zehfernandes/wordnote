@@ -55,28 +55,29 @@ export default function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      console.log("FETCH");
+      try {
+        const v = await Promise.all([
+          getAllData(),
+          getSettings(),
+          new DatabaseInit(),
+          firstLaunch(),
+        ]);
 
-      const v = await Promise.all([
-        getAllData(),
-        getSettings(),
-        new DatabaseInit(),
-        firstLaunch(),
-      ]);
+        const data = v[0];
+        const settings = v[1];
 
-      const data = v[0];
-      const settings = v[1];
+        db.current = v[2];
 
-      db.current = v[2];
+        setGlobalData(data);
+        setLoadedDatabase(true);
 
-      setGlobalData(data);
-      setLoadedDatabase(true);
+        updateTheme(settings.darkMode);
 
-      console.log("SET");
-
-      updateTheme(settings.darkMode);
-
-      await SplashScreen.hideAsync();
+        await SplashScreen.hideAsync();
+      } catch (e) {
+        console.log("LOADING ERROR: ", e);
+        await SplashScreen.hideAsync();
+      }
     };
 
     fetchData();

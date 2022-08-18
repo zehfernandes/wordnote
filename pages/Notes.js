@@ -5,6 +5,7 @@ import {
   StyleSheet,
   LayoutAnimation,
   TouchableWithoutFeedback,
+  Platform,
 } from "react-native";
 import { SwipeListView } from "react-native-swipe-list-view";
 import { StatusBar } from "expo-status-bar";
@@ -81,7 +82,8 @@ export default function Notes({ navigation, globalData, setGlobalData, i18n }) {
 
   const onSwipeValueChange = (swipeData) => {
     const { key, value } = swipeData;
-    if (value > 150 && enableDelete === true) {
+    // Use absolute values to work for left or right swipe
+    if (Math.abs(value) > 150 && enableDelete === true) {
       removeNote(key);
     }
   };
@@ -134,7 +136,8 @@ export default function Notes({ navigation, globalData, setGlobalData, i18n }) {
           renderHiddenItem={(data, rowMap) => (
             <HiddenItem data={data} rowMap={rowMap} />
           )}
-          disableLeftSwipe={true}
+          disableLeftSwipe={Platform.OS === "android"}
+          disableRightSwipe={Platform.OS !== "android"}
           leftOpenValue={0}
           previewRowKey={"0"}
           previewOpenValue={-40}

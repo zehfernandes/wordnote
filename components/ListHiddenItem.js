@@ -7,6 +7,7 @@ function HiddenItem({ rowMap, data }) {
   return (
     <View style={styles.rowBack}>
       <TrashIcon fill="#fff" width={18} height={18} />
+      <TrashIcon fill="#fff" width={18} height={18} />
     </View>
   );
 }
@@ -23,6 +24,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     paddingLeft: 20,
+    paddingRight: 20,
   },
   backRightBtn: {
     alignItems: "center",

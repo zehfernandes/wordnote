@@ -9,7 +9,10 @@ function ListItem({ title, content, createAt, press }) {
 
   let words = null;
   if (content) {
-    words = content.split("\n").length;
+    words = content
+      .trim()
+      .split("\n")
+      .filter((t) => t !== "").length;
   }
 
   return (

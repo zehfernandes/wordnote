@@ -40,7 +40,7 @@ export default function Editor({
   const scrollParentResult = useRef(null);
   const noteInput = useRef(null);
   const noteID = useRef(null);
-  const db = useRef(langsDB.getDatabase("en"));
+  const db = useRef(null);
 
   const defaultTitle = i18n.t("editor.defaultTitle");
 
@@ -164,6 +164,11 @@ export default function Editor({
 
     let meanings = JSON.parse(obj._array[0].meanings);
     let phonetics = JSON.parse(obj._array[0].phonetics);
+
+    // Sort to noun first than verb
+    // TODO: Adapt to other languages
+    meanings.sort((a, b) => a.partOfSpeech.localeCompare(b.partOfSpeech));
+
     return meanings.map((o, i) => {
       return (
         <View key={obj._array[0].word + i}>

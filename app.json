@@ -2,7 +2,7 @@
   "expo": {
     "name": "Wordnote Dictionary",
     "slug": "dictionote",
-    "version": "1.0.0",
+    "version": "1.3.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "privacy": "unlisted",
@@ -15,13 +15,20 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*", "assets/**"],
+    "assetBundlePatterns": [
+      "**/*",
+      "assets/**"
+    ],
     "ios": {
+      "buildNumber": "4",
       "supportsTablet": false,
       "infoPlist": {
         "CFBundleAllowMixedLocalizations": true
       },
-      "bundleIdentifier": "com.zehfernandes.dictionote"
+      "bundleIdentifier": "com.zehfernandes.dictionote",
+      "config": {
+        "usesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -29,7 +36,8 @@
         "backgroundColor": "#FFFFFF"
       },
       "allowBackup": true,
-      "package": "com.zehfernandes.dictionote"
+      "package": "com.zehfernandes.dictionote",
+      "versionCode": 4
     },
     "locales": {
       "pt": "./storelocales/pt.json"

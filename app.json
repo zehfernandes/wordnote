@@ -20,12 +20,15 @@
       "assets/**"
     ],
     "ios": {
-      "buildNumber": "2",
+      "buildNumber": "4",
       "supportsTablet": false,
       "infoPlist": {
         "CFBundleAllowMixedLocalizations": true
       },
-      "bundleIdentifier": "com.zehfernandes.dictionote"
+      "bundleIdentifier": "com.zehfernandes.dictionote",
+      "config": {
+        "usesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -33,7 +36,8 @@
         "backgroundColor": "#FFFFFF"
       },
       "allowBackup": true,
-      "package": "com.zehfernandes.dictionote"
+      "package": "com.zehfernandes.dictionote",
+      "versionCode": 4
     },
     "locales": {
       "pt": "./storelocales/pt.json"

@@ -40,7 +40,7 @@ export default function Editor({
   const scrollParentResult = useRef(null);
   const noteInput = useRef(null);
   const noteID = useRef(null);
-  const db = useRef(langsDB.getDatabase("en"));
+  const db = useRef(null);
 
   const defaultTitle = i18n.t("editor.defaultTitle");
 

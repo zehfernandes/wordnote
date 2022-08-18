@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef, useCallback } from "react";
-import { UIManager, Platform, View, Text } from "react-native";
+import { UIManager, Platform, View, Text, Alert } from "react-native";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import i18n from "./lib/i18n";
@@ -59,14 +59,14 @@ export default function App() {
         const v = await Promise.all([
           getAllData(),
           getSettings(),
-          new DatabaseInit(),
           firstLaunch(),
         ]);
 
         const data = v[0];
         const settings = v[1];
 
-        db.current = v[2];
+        db.current = new DatabaseInit();
+        await db.current.init();
 
         setGlobalData(data);
         setLoadedDatabase(true);
@@ -75,8 +75,8 @@ export default function App() {
 
         await SplashScreen.hideAsync();
       } catch (e) {
-        console.log("LOADING ERROR: ", e);
-        await SplashScreen.hideAsync();
+        console.log(e);
+        // Alert.alert(e);
       }
     };
 

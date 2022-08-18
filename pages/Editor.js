@@ -164,6 +164,11 @@ export default function Editor({
 
     let meanings = JSON.parse(obj._array[0].meanings);
     let phonetics = JSON.parse(obj._array[0].phonetics);
+
+    // Sort to noun first than verb
+    // TODO: Adapt to other languages
+    meanings.sort((a, b) => a.partOfSpeech.localeCompare(b.partOfSpeech));
+
     return meanings.map((o, i) => {
       return (
         <View key={obj._array[0].word + i}>

@@ -9,7 +9,7 @@ import {
   TouchableWithoutFeedback,
 } from "react-native";
 
-import { useWindowDimensions } from "react-native";
+import { useWindowDimensions, KeyboardAvoidingView } from "react-native";
 import { useKeepAwake } from "expo-keep-awake";
 import { useTheme, CommonActions } from "@react-navigation/native";
 import { useHeaderHeight } from "@react-navigation/elements";
@@ -275,6 +275,11 @@ export default function Editor({
     findWord(query);
   };
 
+  const onFocusResult = () => {
+    // let query = getWordPerLine(noteContent, cursorPos);
+    // findWord(query);
+  };
+
   const updateGlobalState = () => {
     const index = globalData.findIndex((item) => item.id === noteID.current);
 
@@ -300,7 +305,9 @@ export default function Editor({
     windowHeight - 165 - keyboard.keyboardHeight - headerHeight;
 
   return (
-    <View style={[styles.container, { backgroundColor: colors.background }]}>
+    <KeyboardAvoidingView 
+      behavior="height"
+      style={[styles.container, { backgroundColor: colors.background }]}>
       <StatusBar style={dark ? "light" : "dark"} />
 
       <ScrollView
@@ -308,7 +315,7 @@ export default function Editor({
         keyboardShouldPersistTaps="always"
         ref={scrollParentInput}
         style={{
-          height: noteHeight,
+          flex: 2
         }}
         persistentScrollbar={true}
         removeClippedSubviews={true}
@@ -364,14 +371,14 @@ export default function Editor({
       {/* ####### Result ##### */}
       <ScrollView
         ref={scrollParentResult}
-        contentContainerStyle={{ paddingBottom: 30, flexGrow: 1 }}
+        contentContainerStyle={{ paddingBottom: 30 }}
         persistentScrollbar={true}
-        keyboardDismissMode="none"
-        keyboardShouldPersistTaps="always"
+        keyboardDismissMode="onDrag"
+        keyboardShouldPersistTaps="never"
+        onFocus={onFocusResult}
         style={[
           styles.resultContainer,
           {
-            top: noteHeight,
             backgroundColor: colors.backgroundLevel2,
           },
         ]}
@@ -391,14 +398,16 @@ export default function Editor({
           />
         )}
       </ScrollView>
-    </View>
+    </KeyboardAvoidingView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     // This is need for android to work the meaning scrollview
-    flex: Platform.OS === "android" ? 1 : 0,
+    flex: 1,
+    flexDirection: "column",
+    alignContent: "space-between",
   },
   input: {
     paddingHorizontal: 10,
@@ -417,10 +426,11 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 24,
     fontFamily: "iA Writer Quattro",
     width: "100%",
-    position: "absolute",
-    height: 165,
+    minheight: 165,
     backgroundColor: "#E6E6E6",
     padding: 16,
     paddingTop: 12,
+    flex: 1,
+    flexGrow: 1,
   },
 });

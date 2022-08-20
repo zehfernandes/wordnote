@@ -275,11 +275,6 @@ export default function Editor({
     findWord(query);
   };
 
-  const onFocusResult = () => {
-    // let query = getWordPerLine(noteContent, cursorPos);
-    // findWord(query);
-  };
-
   const updateGlobalState = () => {
     const index = globalData.findIndex((item) => item.id === noteID.current);
 
@@ -375,7 +370,6 @@ export default function Editor({
         persistentScrollbar={true}
         keyboardDismissMode="onDrag"
         keyboardShouldPersistTaps="never"
-        onFocus={onFocusResult}
         style={[
           styles.resultContainer,
           {

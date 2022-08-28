@@ -420,7 +420,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 24,
     fontFamily: "iA Writer Quattro",
     width: "100%",
-    minheight: 165,
+    minHeight: 165,
     backgroundColor: "#E6E6E6",
     padding: 16,
     paddingTop: 12,

@@ -368,7 +368,7 @@ export default function Editor({
         ref={scrollParentResult}
         contentContainerStyle={{ paddingBottom: 30 }}
         persistentScrollbar={true}
-        keyboardDismissMode="onDrag"
+        keyboardDismissMode="none"
         keyboardShouldPersistTaps="never"
         style={[
           styles.resultContainer,

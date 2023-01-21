@@ -9,7 +9,10 @@
     "title": "Baixar Dicionários",
     "en": "Inglês",
     "fr": "Francês",
-    "es": "Espanhol"
+    "es": "Espanhol",
+    "pt": "Português",
+    "de": "Alemão",
+    "it": "Italiano"
   },
   "settings": {
     "title": "Configurações",

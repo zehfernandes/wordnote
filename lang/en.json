@@ -9,7 +9,10 @@
     "title": "Download Dictionaries",
     "en": "English",
     "fr": "French",
-    "es": "Spanish"
+    "es": "Spanish",
+    "pt": "Portuguese",
+    "de": "German",
+    "it": "Italian"
   },
   "settings": {
     "title": "Settings",

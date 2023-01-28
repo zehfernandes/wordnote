@@ -2,7 +2,7 @@
   "expo": {
     "name": "Wordnote Dictionary",
     "slug": "dictionote",
-    "version": "1.4.0",
+    "version": "1.5.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "privacy": "unlisted",
@@ -15,9 +15,12 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*", "assets/**"],
+    "assetBundlePatterns": [
+      "**/*",
+      "assets/**"
+    ],
     "ios": {
-      "buildNumber": "4",
+      "buildNumber": "6",
       "supportsTablet": false,
       "infoPlist": {
         "CFBundleAllowMixedLocalizations": true,
@@ -35,13 +38,18 @@
       },
       "allowBackup": true,
       "package": "com.zehfernandes.dictionote",
-      "versionCode": 4
+      "versionCode": 6
     },
     "locales": {
       "pt": "./storelocales/pt.json"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a3903e0f-b695-4889-9222-d6684c190e35"
+      }
     }
   }
 }

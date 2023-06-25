@@ -2,7 +2,7 @@
   "expo": {
     "name": "Wordnote Dictionary",
     "slug": "dictionote",
-    "version": "1.5.0",
+    "version": "1.6.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "privacy": "unlisted",
@@ -20,7 +20,7 @@
       "assets/**"
     ],
     "ios": {
-      "buildNumber": "6",
+      "buildNumber": "8",
       "supportsTablet": false,
       "infoPlist": {
         "CFBundleAllowMixedLocalizations": true,
@@ -38,7 +38,7 @@
       },
       "allowBackup": true,
       "package": "com.zehfernandes.dictionote",
-      "versionCode": 6
+      "versionCode": 7
     },
     "locales": {
       "pt": "./storelocales/pt.json"

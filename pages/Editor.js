@@ -350,7 +350,7 @@ export default function Editor({
           autoCorrect={false}
           autoCapitalize="none"
           selectTextOnFocus={false}
-          contextMenuHidden={true}
+          contextMenuHidden={false}
           spellCheck={false}
           textAlignVertical="top"
           onChangeText={onChangeNoteText}

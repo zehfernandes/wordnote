@@ -356,6 +356,7 @@ export default function Editor({
           onChangeText={onChangeNoteText}
           onSelectionChange={onNoteSelectionChage}
           onFocus={onFocusNote}
+          keyboardAppearance={dark ? "dark" : "light"}
         >
           <Text>{noteContent}</Text>
         </TextInput>

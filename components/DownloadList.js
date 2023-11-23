@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
 import { AnimatedCircularProgress } from "react-native-circular-progress";
 import CheckIcon from "../assets/icons/Check";
-import DonwloadIcon from "../assets/icons/Download";
+import DownloadIcon from "../assets/icons/Download";
 import PauseIcon from "../assets/icons/Pause";
 
 import { useTheme } from "@react-navigation/native";
@@ -149,7 +149,7 @@ function downloadView(downloading, progress, colors) {
       </View>
     );
   } else {
-    return <DonwloadIcon width={24} height={24} fill={colors.text} />;
+    return <DownloadIcon width={24} height={24} fill={colors.text} />;
   }
 }
 
@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
 });
 
 // -----------------
-// Manage Donwload
+// Manage Download
 // -----------------
 async function downloadFile(uri, fileName, onFinish, onProgress) {
   let baseDir = FileSystem.documentDirectory;

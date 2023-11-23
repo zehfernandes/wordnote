@@ -246,7 +246,7 @@ export default function Editor({
     updateGlobalState();
   };
 
-  const onNoteSelectionChage = (event) => {
+  const onNoteSelectionChange = (event) => {
     let sel = event.nativeEvent.selection;
 
     setCursorPos(sel);
@@ -354,7 +354,7 @@ export default function Editor({
           spellCheck={false}
           textAlignVertical="top"
           onChangeText={onChangeNoteText}
-          onSelectionChange={onNoteSelectionChage}
+          onSelectionChange={onNoteSelectionChange}
           onFocus={onFocusNote}
         >
           <Text>{noteContent}</Text>

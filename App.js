@@ -35,7 +35,7 @@ if (Platform.OS === "android") {
   }
 }
 
-//TODO: Move Appereance to AppDB
+//TODO: Move Appearance to AppDB
 let MyTheme = generateTheme(false);
 
 // Keep the splash screen visible while we fetch resources

@@ -6,6 +6,7 @@ import {
   TextInput,
   ScrollView,
   Text,
+  Platform,
   TouchableWithoutFeedback,
 } from "react-native";
 
@@ -112,13 +113,6 @@ export default function Editor({
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <TouchableWithoutFeedback onPress={() => CommonActions.goBack()}>
-          <View style={{ width: 30, height: 30 }}>
-            <Chevron width={30} height={30} fill={colors.primary} />
-          </View>
-        </TouchableWithoutFeedback>
-      ),
-      headerRight: () => (
         <View
           style={{
             flexDirection: "row",
@@ -157,13 +151,13 @@ export default function Editor({
   function parseResult(c) {
     let obj = JSON.parse(c);
 
-    if (obj._array.length <= 0) {
+    if (obj.length <= 0) {
       setResult(null);
       return;
     }
 
-    let meanings = JSON.parse(obj._array[0].meanings);
-    let phonetics = JSON.parse(obj._array[0].phonetics);
+    let meanings = JSON.parse(obj[0].meanings);
+    let phonetics = JSON.parse(obj[0].phonetics);
 
     // Sort to noun first than verb
     // TODO: Adapt to other languages
@@ -171,7 +165,7 @@ export default function Editor({
 
     return meanings.map((o, i) => {
       return (
-        <View key={obj._array[0].word + i}>
+        <View key={obj[0].word + i}>
           <PartOfSpeech
             key={o.partOfSpeech + i}
             type={o.partOfSpeech}
@@ -181,7 +175,7 @@ export default function Editor({
           {o.definitions.map((m, i2) => {
             return (
               <Meaning
-                key={obj._array[0].word + i + i2}
+                key={obj[0].word + i + i2}
                 number={i2 + 1}
                 content={m.definition}
               />
@@ -223,14 +217,13 @@ export default function Editor({
     if (!word) return null;
     if (!db.current) return null;
 
+    console.log(db.current)
+
     let q = word.toLowerCase();
-    db.current.transaction((tx) => {
-      tx.executeSql(
-        `select * from words WHERE word='${q}'`,
-        [],
-        (_, { rows }) => setResult(JSON.stringify(rows))
-      );
-    });
+    const rows = db.current.getAllSync( `select * from words WHERE word='${q}'`)
+    setResult(JSON.stringify(rows))
+
+    
   }
 
   // Events

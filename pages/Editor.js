@@ -91,14 +91,14 @@ export default function Editor({
   // Save global state in the editor to keep the methods in the same file
   useEffect(() => {
     if (route.params?.lang) {
-      console.log("CHANGE DB LANG", route.params.lang);
+      // console.log("CHANGE DB LANG", route.params.lang);
       db.current = langsDB.getDatabase(route.params.lang);
 
       setLang(route.params.lang);
     }
 
     if (route.params?.updateFromModal) {
-      console.log("Update from modal");
+      // console.log("Update from modal");
       updateLang(noteID.current, route.params.lang);
       updateGlobalState();
 
@@ -217,13 +217,9 @@ export default function Editor({
     if (!word) return null;
     if (!db.current) return null;
 
-    console.log(db.current)
-
     let q = word.toLowerCase();
     const rows = db.current.getAllSync( `select * from words WHERE word='${q}'`)
     setResult(JSON.stringify(rows))
-
-    
   }
 
   // Events
@@ -349,6 +345,7 @@ export default function Editor({
           onChangeText={onChangeNoteText}
           onSelectionChange={onNoteSelectionChage}
           onFocus={onFocusNote}
+          keyboardAppearance={dark ? "dark" : "light"}
         >
           <Text>{noteContent}</Text>
         </TextInput>
